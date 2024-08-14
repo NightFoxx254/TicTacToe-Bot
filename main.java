@@ -73,3 +73,41 @@ public class Main {
     }
     createBoard(taco);
   }
+
+  public static list choiceOfMeat(List<List<String>> taco, String finalMove){
+    if((String)taco.get(1).get(0) == finalMove && (String)taco.get(2).get(0) == finalMove || (String)taco.get(0).get(1) == finalMove && (String)taco.get(0).get(2) == finalMove || (String)taco.get(1).get(1) == finalMove && (String)taco.get(2).get(2) == finalMove){
+      List<Integer> list = new ArrayList<>(0,0);
+      return list;
+    }else if((String)taco.get(0).get(0) == finalMove && (String)taco.get(0).get(1) == finalMove || (String)taco.get(1).get(1) == finalMove && (String)taco.get(2).get(0) == finalMove || (String)taco.get(2).get(1) == finalMove && (String)taco.get(2).get(2) == finalMove){
+      List<Integer> list = new ArrayList<>(0,2);
+      return list;
+    }else if((String)taco.get(0).get(2) == finalMove && (String)taco.get(1).get(2) == finalMove || (String)taco.get(0).get(0) == finalMove && (String)taco.get(1).get(1) == finalMove || (String)taco.get(2).get(0) == finalMove && (String)taco.get(2).get(1) == finalMove){
+      List<Integer> list = new ArrayList<>(2,2);
+      return list;
+    }else if((String)taco.get(0).get(0) == finalMove && (String)taco.get(1).get(0) == finalMove || (String)taco.get(1).get(1) == finalMove && (String)taco.get(0).get(2) == finalMove || (String)taco.get(2).get(1) == finalMove && (String)taco.get(2).get(2) == finalMove){
+      List<Integer> list = new ArrayList<>(2,0);
+      return list;
+    }else if((String)taco.get(0).get(0) == finalMove && (String)taco.get(0).get(2) == finalMove || (String)taco.get(1).get(1) == finalMove && (String)taco.get(2).get(1) == finalMove){
+      List<Integer> list = new ArrayList<>(0,1);
+      return list;
+    }else if((String)taco.get(0).get(2) == finalMove && (String)taco.get(2).get(2) == finalMove || (String)taco.get(1).get(0) == finalMove && (String)taco.get(1).get(1) == finalMove){
+      List<Integer> list = new ArrayList<>(1,2);
+      return list;
+    }else if((String)taco.get(2).get(0) == finalMove && (String)taco.get(2).get(2) == finalMove || (String)taco.get(1).get(1) == finalMove && (String)taco.get(0).get(1) == finalMove){
+      List<Integer> list = new ArrayList<>(2,1);
+      return list;
+    }else if((String)taco.get(0).get(0) == finalMove && (String)taco.get(2).get(0) == finalMove || (String)taco.get(1).get(1) == finalMove && (String)taco.get(1).get(2) == finalMove){
+      List<Integer> list = new ArrayList<>(1,0);
+      return list;
+    }else{
+      return null;
+    }
+  }
+
+  public static boolean stomachFull(List<List<String>> taco, Integer x,Integer y){
+    if((String)taco.get(y).get(x) == " "){
+      return false;
+    }else{
+      return true;
+    }
+  }
