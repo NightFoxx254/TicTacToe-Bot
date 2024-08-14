@@ -111,3 +111,36 @@ public class Main {
       return true;
     }
   }
+
+  public static void enchillada(List<List<String>> taco, String winChecker, Boolean gameOver){
+    if(winChecker == "X"){
+      System.out.println("You Lost");
+      gameOver = true;
+    }else{
+      System.out.println("You Won!!!");
+      gameOver = true;
+    }
+  }
+
+  public static void person(List<List<String>> taco, String winChecker, Boolean gameOver){
+    for(int i = 0; i < 3;i++){
+      if((String)taco.get(i).get(i*3+1) == winChecker && (String)taco.get(i).get(i*3+2) == winChecker && (String)taco.get(i).get(i*3+3) == winChecker){
+        enchillada(taco, winChecker, gameOver);
+      }
+    }
+    for(int i = 0; i < 3;i++){
+      if((String)taco.get(i*3+1).get(i) == winChecker && (String)taco.get(i*3+2).get(i) == winChecker && (String)taco.get(i*3+3).get(i) == winChecker){
+        enchillada(taco, winChecker, gameOver);
+      }
+    }
+    if((String)taco.get(0).get(0) == winChecker && (String)taco.get(1).get(1) == winChecker && (String)taco.get(2).get(2) == winChecker ){
+      enchillada(taco, winChecker, gameOver);
+    }
+    if((String)taco.get(0).get(2) == winChecker && (String)taco.get(1).get(1) == winChecker && (String)taco.get(2).get(0) == winChecker ){
+      enchillada(taco, winChecker, gameOver);
+    }
+    if(!taco.contains(" ") && gameOver == false){
+      System.out.println("Cats Game/You tied!");
+    }
+  }
+}
